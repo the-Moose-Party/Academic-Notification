@@ -1,7 +1,21 @@
 name: main
 on:
   push:
-  # - name: React Project Checker
-  # You may pin to the exact commit or the version.
-  # uses: VictorDanilov/react-project-checker-action@3c1454ece249b31da81f04d29f2e5e6dba549d99
-  # uses: VictorDanilov/react-project-checker-action@v0.0.1-alpha
+
+jobs:
+  ubuntu-test:
+    name: Ubuntu Tests
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Install ESLint
+        run: npm install
+        
+      - name: initialize ESLint
+        run: npm init @eslint/config@latest
+    
+  # https://dev.to/thomaslombart/how-to-setup-eslint-and-prettier-for-your-react-apps-1n42
+
+  # Need: linter, limit size (5 megs max), use Checkout to allow for the checks, use at least two platforms 
+  # (runners) to run checks, determine triggers
+
+  # npm install eslint
