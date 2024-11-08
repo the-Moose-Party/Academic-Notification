@@ -7,4 +7,5 @@ The Academic and Advising Services Center has a need for an application that can
 
 The following developers are involved in this project: Quinn Knowles, David Kaufman, Alexa Guerrero, Jon Malcolm, and Kevin Menenello
 
-hello world
+# Licensing
+https://regexlicensing.org/
