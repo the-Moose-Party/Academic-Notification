@@ -1,0 +1,36 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: #FFFFFF;
+    display: flex;
+    width: 99vw;
+    height: 10vh;
+}
+
+header h1{
+    font-family: "Times New Roman", Times, serif;
+    padding-left: 5vw;
+}
+
+#main-body{
+    background-color: #FEF7FF;
+    display:flex;
+    width: 99vw;
+    height: 88vh;
+    border-width: 1vw;
+    border-color: #E4E6EC;
+    padding: 5vh 10vw;
+}
+
+#student-info{
+    width: 55vw;
+}
+#student-head{
+    display: flex;
+}
+
+#student-basic-info{
+    margin: 0vh 2vw;
+}
