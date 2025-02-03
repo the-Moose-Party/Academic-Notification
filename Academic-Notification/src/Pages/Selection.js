@@ -14,7 +14,8 @@ export default function Selection() {
 
   const handleSelectStudent = (studentID) => {
     console.log("Navigating to progress with student ID:", studentID); //debug
-    navigate('/degree-progress/${studentID}');
+    navigate(`/degree-progress/${studentID}`);
+
   };
 
   const handleKeyDown = (e) => {
