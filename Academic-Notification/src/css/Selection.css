@@ -5,8 +5,8 @@
 
 .settings-icon {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     cursor: pointer; /* Change cursor to pointer for interactivity */
     color: #333; /* Icon color */
 }

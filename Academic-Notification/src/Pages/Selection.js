@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import umaine from '../img/umaine.png';
 import '../css/Selection.css';
 import { FiSettings } from 'react-icons/fi';
@@ -6,9 +7,21 @@ import { FiSettings } from 'react-icons/fi';
 export default function Selection() {
   const [search, setSearch] = useState('');
   const data = ['1125662', '0000000', '1122334', '1634455', '1182072'];
+  const navigate = useNavigate();
 
   const filteredData = search
   ? data.filter((item) => item.includes(search)): [];
+
+  const handleSelectStudent = (studentID) => {
+    console.log("Navigating to progress with student ID:", studentID); //debug
+    navigate('/degree-progress/${studentID}');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && filteredData.length > 0) {
+        handleSelectStudent(filteredData[0]);
+    }
+  };
 
   return (
     <div className="home">
@@ -32,13 +45,14 @@ export default function Selection() {
             placeholder="Enter Student ID"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
             />
 
             {/* Dropdown for filtered results */}
             {filteredData.length > 0 && (
                 <ul className="dropdown">
                     {filteredData.map((item, index) => (
-                        <li key={index} className="dropdown-item">
+                        <li key={index} className="dropdown-item" onClick={() => handleSelectStudent(item)}>
                             {item}
                         </li>
                     ))}
