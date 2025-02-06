@@ -1,0 +1,128 @@
+.degree-progress {
+    margin: auto;
+    background: fixed;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: #00274C;
+    border-bottom: 1px solid;
+    position: relative;
+}
+
+.back-button {
+    font-size: 40px;
+    cursor: pointer;
+    color: #73BAE8;
+}
+
+.back-button:hover {
+    color: #fff;
+}
+
+.header-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+    color: white;
+    font-size: 3cap;
+}
+
+.setting-icon {
+    font-size: 35px;
+    cursor: pointer;
+    color: #73BAE8;
+}
+
+.setting-icon:hover {
+    color: #fff;
+}
+
+.student-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.avatar img{
+    margin-top: 5cap;
+    max-width: 25cap;
+    max-height: 25cap;
+    background: #ccc;
+    border-radius: 50%;
+    margin-left: 5cap;
+    margin-right: 2cap;
+}
+
+
+.student-details {
+    text-align: left;
+    flex: 1;
+    display: inline-block;
+    margin-left: 1.5cap;
+    margin-top: 10cap;
+    font-size: large;
+}
+
+.degree-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.degree-details h3 {
+    margin-left: 2.5cap;
+    margin-top: 3.5cap;
+    margin-bottom: 2cap;
+    font-family: Verdana;
+    font-size: 3cap;
+
+}
+
+.major, .minor {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(233, 231, 231);
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 3cap;
+    margin-right: 40cap;
+    margin-bottom: 1.5cap;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.425);
+    font-size: 1.5cap;
+}
+
+.credit-report {
+    background: #0C598E;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Verdana;
+
+}
+
+.credit-report:hover {
+    background: #73BAE8;
+}
+
+.summary-report {
+    margin-top: 3.5cap;
+    margin-bottom: 5cap;
+    margin-left: 125cap;
+    padding: 16px;
+    background: #00274C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Verdana;
+}
+
+.summary-report:hover {
+    background: #3D85BB;
+}
