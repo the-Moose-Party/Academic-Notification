@@ -1,0 +1,60 @@
+.degree-progress-info{
+    margin: auto;
+    background: fixed;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: #00274C;
+    border-bottom: 1px solid;
+    position: relative;
+}
+
+.back-button {
+    font-size: 40px;
+    cursor: pointer;
+    color: #73BAE8;
+}
+
+.back-button:hover {
+    color: #fff;
+}
+
+.header-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+    color: white;
+    font-size: 3cap;
+}
+
+.setting-icon {
+    font-size: 35px;
+    cursor: pointer;
+    color: #73BAE8;
+}
+
+.setting-icon:hover {
+    color: #fff;
+}
+.list-container{
+    max-width: 80%;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 100px 100px;
+}
+
+.requirement{
+    padding: 30px 10px;
+    margin: 10px 10px;
+}
+
+.requirement-progress{
+    
+}
+.percent-progress{
+    list-style: none;
+}
