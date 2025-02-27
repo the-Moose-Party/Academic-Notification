@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Selection />} />
         <Route path="/degree-progress/:studentID" element={<DegreeProgress />} />
         <Route path="/degree-information/:studentID" element={<DegreeInfo/>} />
-        <Route path="/elective-requirements/:studentID" element={<ElectiveRequirements/>} /> 
+        <Route path="/elective-requirements/:studentID/:requirement" element={<ElectiveRequirements/>} /> 
       </Routes>
     </Router>
   );

@@ -39,3 +39,15 @@
 .setting-icon:hover {
     color: #fff;
 }
+
+.course-info{
+    border: black 2px solid;
+    max-width: 600px;
+    margin: 8px;
+    padding: 4px;
+}
+
+.wishlist-button{
+    padding: 2px;
+    margin: 4px;
+}
