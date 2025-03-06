@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import '../css/DegreeInfo.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
@@ -7,6 +7,10 @@ import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 export default function DegreeInfo(){
     const { studentID } = useParams();
+
+
+    const { state } = useLocation();  // Get the passed state
+    const { studentData } = state || {}; // Destructure the student data 
 
     const navigate = useNavigate();
 
@@ -42,7 +46,7 @@ export default function DegreeInfo(){
             <button
               key={index}
               className="boxbutton"
-              onClick={() => navigate('/course-selection')}
+              onClick={() => navigate(`/elective-requirements/${studentID}/${PlaceholderReqs}`, { state: { studentData } })}
             >
               Box {index + 1}
             </button>
