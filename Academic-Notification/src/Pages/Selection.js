@@ -48,10 +48,11 @@ export default function Selection() {
     ? data.filter((item) => item.includes(search))
     : [];
 
-  const handleSelectStudent = (studentID) => {
-    console.log("Navigating to progress with student ID:", studentID);
-    navigate(`/degree-progress/${studentID}`);
-  };
+    const handleSelectStudent = (studentID) => {
+        const studentData = data.find((item) => item === studentID); // Get the actual data
+        console.log("Navigating to progress with student ID:", studentID);
+        navigate(`/degree-progress/${studentID}`, { state: { studentData } });
+      };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && filteredData.length > 0) {
