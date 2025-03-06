@@ -27,13 +27,29 @@ export default function DegreeInfo(){
                 <FiSettings className="setting-icon" />
             </div>
 
-            <div class="list-container">
-                <div class="requirements-list">
-                    {PlaceholderReqs.map((requirement) => (
-                        <button class="requirement" onClick={() => navigate(`/elective-requirements/${studentID}/${requirement.name}`)}>{ requirement.name }</button>
-                    ))}
-                </div>
-            </div>
+            <div className="scrollable-container">
+      {/* Header */}
+      <div className="header">
+        <FiArrowLeft className="back-button" onClick={() => window.history.back()} />
+        <h2 className="header-title">Scrollable Box</h2>
+        <div className="spacer" /> {/* Placeholder for spacing */}
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="scrollable-box">
+        <div className="box-grid">
+        {[...Array(12)].map((_, index) => (
+            <button
+              key={index}
+              className="boxbutton"
+              onClick={() => navigate('/course-selection')}
+            >
+              Box {index + 1}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
             <div class="requirement-progress">
                 <img class="Piechart-Image" src="../img/moose-logo.png" alt="Pie chart placeholder"/>
                 <ul class="percent-progress">

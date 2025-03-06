@@ -40,7 +40,7 @@ export default function DegreeProgress() {
                         <span>Major: Chemical Engineerig</span>
                         <button className="credit-report">Credit Report</button>
                     </div>
-
+            </div>
 
             <div className="degree-details">
                 <h3>Majors & Minors</h3>
