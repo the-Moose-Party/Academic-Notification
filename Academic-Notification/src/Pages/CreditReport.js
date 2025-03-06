@@ -20,7 +20,7 @@ export default function ScrollableBox() {
         {[...Array(12)].map((_, index) => (
             <button
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-300 text-center"
+              className="boxbutton"
               onClick={() => navigate('/course-selection')}
             >
               Box {index + 1}
