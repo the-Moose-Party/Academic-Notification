@@ -34,7 +34,7 @@ export default function DegreeProgress() {
                     <h3>Majors & Minors</h3>
                     <div className='major'>
                         <span>Major: Electrical Engineerig</span>
-                        <button className="credit-report">Credit Report</button>
+                        <button className="credit-report" onClick={() => navigate("/fake-page")}>Credit Report</button>
                     </div>
                     <div className='major'>
                         <span>Major: Chemical Engineerig</span>
