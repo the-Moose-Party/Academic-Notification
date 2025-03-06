@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useStudentData } from '../hooks/useStudentData'; 
 import '../css/DegreeInfo.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
@@ -7,10 +8,8 @@ import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 export default function DegreeInfo(){
     const { studentID } = useParams();
+    const { studentData, loading, error } = useStudentData(studentID);
 
-
-    const { state } = useLocation();  // Get the passed state
-    const { studentData } = state || {}; // Destructure the student data 
 
     const navigate = useNavigate();
 

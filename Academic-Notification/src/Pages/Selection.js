@@ -9,11 +9,9 @@ export default function Selection() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch the student IDs dynamically
   useEffect(() => {
     const fetchStudentData = async () => {
       try {
-        // List of student files you want to fetch (you can also dynamically generate this if necessary)
         const studentFiles = [
           '1125662',
           '0000000',
@@ -23,40 +21,45 @@ export default function Selection() {
           '1011854',
           '9876543',
           '1011856',
-        ]; 
+        ];
 
-        const studentIds = [];
+        const students = [];
         for (let file of studentFiles) {
           const response = await fetch(`/students/${file}.json`);
           if (response.ok) {
             const studentData = await response.json();
-            studentIds.push(file); 
+            students.push({ id: file, data: studentData });
           } else {
             console.error(`Failed to fetch student data for ${file}`);
           }
         }
-        setData(studentIds);
+        setData(students); 
       } catch (error) {
-        console.error("Error fetching student data:", error);
+        console.error('Error fetching student data:', error);
       }
     };
 
     fetchStudentData();
   }, []);
 
+  // Filter data based on search input
   const filteredData = search
-    ? data.filter((item) => item.includes(search))
+    ? data.filter((item) => item.id.includes(search))
     : [];
 
-    const handleSelectStudent = (studentID) => {
-        const studentData = data.find((item) => item === studentID); // Get the actual data
-        console.log("Navigating to progress with student ID:", studentID);
-        navigate(`/degree-progress/${studentID}`, { state: { studentData } });
-      };
+  // Handle selecting a student and navigating with the student data
+  const handleSelectStudent = (studentID) => {
+    const student = data.find((item) => item.id === studentID); // Find the student data
+    if (student) {
+      console.log('Navigating to progress with student ID:', studentID);
+      navigate(`/degree-progress/${studentID}`);
+    }
+  };
 
+  // Handle "Enter" key press to select the first filtered student
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" && filteredData.length > 0) {
-      handleSelectStudent(filteredData[0]);
+    if (e.key === 'Enter' && filteredData.length > 0) {
+      handleSelectStudent(filteredData[0].id);
     }
   };
 
@@ -85,8 +88,12 @@ export default function Selection() {
         {filteredData.length > 0 && (
           <ul className="dropdown">
             {filteredData.map((item, index) => (
-              <li key={index} className="dropdown-item" onClick={() => handleSelectStudent(item)}>
-                {item}
+              <li
+                key={index}
+                className="dropdown-item"
+                onClick={() => handleSelectStudent(item.id)}
+              >
+                {item.id}
               </li>
             ))}
           </ul>
