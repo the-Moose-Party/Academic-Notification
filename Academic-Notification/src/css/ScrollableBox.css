@@ -1,0 +1,64 @@
+/* Container */
+.scrollable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e5e7eb; /* Light gray background */
+}
+
+.back-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.spacer {
+    width: 24px; /* Placeholder for spacing */
+}
+
+/* Scrollable Box */
+.scrollable-box {
+    width: 66%;
+    height: 66%;
+    overflow-y: auto;
+    background-color: #D9D9D9;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 15px 15px;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+}
+
+/* Box Grid */
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Individual Box */
+.box {
+    background-color: white;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d1d5db;
+    text-align: center;
+}
+
+.boxbutton {
+    height: 200px;
+    width: 200px;
+    background: #77B5E6;
+    color: #ffffff;
+    border: 2px solid #000000;
+    text-align: top;
+    font: 2.5em;
+}
