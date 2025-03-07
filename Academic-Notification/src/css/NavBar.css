@@ -1,0 +1,54 @@
+.navbar-container {
+    display: flex;
+  }
+  
+.navbar {
+    width: 200px;
+    height: 100vh;
+    background: #001f3f;
+    transition: width 0.3s;
+    padding: 10px;
+    color: white;
+    overflow: hidden;
+}
+  
+.navbar.collapsed {
+    width: 45px;
+}
+  
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+  
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.navbar li {
+    margin: 20px 0;
+}
+  
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+  
+.navbar a svg {
+    margin-right: 10px;
+    font-size: 24px;
+    height: 30px;
+    width: 30px;
+}
+  
+.navbar.collapsed a span {
+    display: none;
+}
+  
