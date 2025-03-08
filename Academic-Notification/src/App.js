@@ -5,6 +5,7 @@ import DegreeProgress from "./Pages/DegreeProgress";
 import CourseSelection from './Pages/CourseSelection.js';
 import DegreeInfo from "./Pages/DegreeInfo";
 import ElectiveRequirements from "./Pages/ElectiveRequirements";
+import FakePage from "./Pages/FakePage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Course-Selection/:studentID" element={<CourseSelection />} />
         <Route path="/degree-information/:studentID" element={<DegreeInfo/>} />
         <Route path="/elective-requirements/:studentID/:requirement" element={<ElectiveRequirements/>} /> 
+        <Route path="/fake-page" element={<FakePage />} />
       </Routes>
     </Router>
   );

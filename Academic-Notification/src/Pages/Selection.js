@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import umaine from '../img/umaine.png';
-import '../css/Selection.css';
-import { FiSettings } from 'react-icons/fi';
+import '../styles.css';
+import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 export default function Selection() {
   const [search, setSearch] = useState('');
@@ -33,7 +33,7 @@ export default function Selection() {
             console.error(`Failed to fetch student data for ${file}`);
           }
         }
-        setData(students); 
+        setData(students);
       } catch (error) {
         console.error('Error fetching student data:', error);
       }
@@ -64,40 +64,45 @@ export default function Selection() {
   };
 
   return (
-    <div className="home">
-      <div className="settings-icon">
-        <FiSettings size={24} />
+    <div className="selections">
+      {/* Header */}
+      <div className="header">
+        <h2 className="header-title">Student ID Selection</h2>
+        <FiSettings className="setting-icon" />
       </div>
 
-      <div className="logo-container">
-        <img src={umaine} alt="Umaine Logo" />
-      </div>
 
-      <h1 className="title">Academic Notification</h1>
+      <div className="content-justify">
+        <div className="logo-container">
+          <img src={umaine} alt="Umaine Logo" height="150px" width="150px" />
+        </div>
 
-      <div className="search-container">
-        <input
-          type="text"
-          className="search"
-          placeholder="Enter Student ID"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
+        <h1 className="title">Academic Notification</h1>
 
-        {filteredData.length > 0 && (
-          <ul className="dropdown">
-            {filteredData.map((item, index) => (
-              <li
-                key={index}
-                className="dropdown-item"
-                onClick={() => handleSelectStudent(item.id)}
-              >
-                {item.id}
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className="search-container">
+          <input
+            type="text"
+            className="search"
+            placeholder="Enter Student ID"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+
+          {filteredData.length > 0 && (
+            <ul className="dropdown">
+              {filteredData.map((item, index) => (
+                <li
+                  key={index}
+                  className="dropdown-item"
+                  onClick={() => handleSelectStudent(item.id)}
+                >
+                  {item.id}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );
