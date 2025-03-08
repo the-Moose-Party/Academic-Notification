@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaHome, FaClipboardList, FaBook } from "react-icons/fa";
-import "../css/NavBar.css";
+import '../styles.css';
 
 const NavBar = () => {
   const [collapsed, setCollapsed] = useState(false);
