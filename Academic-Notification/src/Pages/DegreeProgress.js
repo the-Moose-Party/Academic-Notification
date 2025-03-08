@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 import { useStudentData } from '../hooks/useStudentData'; 
-import '../css/DegreeProgress.css';
+import '../styles.css';
 import user from '../img/user.png';
 
 export default function DegreeProgress() {
@@ -22,7 +22,7 @@ export default function DegreeProgress() {
 
             <div className="student-info">
                 <div className="avatar">
-                    <img src={user} alt="user-avatar" />
+                    <img src={user} alt="user-avatar" width = "300px" height = "300px" />
                 </div>
                 <div className="student-details">
                     <h3><strong>Student Name:</strong> John Doe</h3>

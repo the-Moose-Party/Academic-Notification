@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useStudentData } from '../hooks/useStudentData'; 
-import '../css/DegreeInfo.css';
+import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 export default function DegreeInfo(){
@@ -36,12 +36,6 @@ export default function DegreeInfo(){
             </div>
 
             <div className="scrollable-container">
-                {/* Header */}
-                <div className="header">
-                    <FiArrowLeft className="back-button" onClick={() => window.history.back()} />
-                    <h2 className="header-title">Scrollable Box</h2>
-                    <div className="spacer" /> {/* Placeholder for spacing */}
-                </div>
 
                 {/* Scrollable Content */}
                 <div className="scrollable-box">
