@@ -11,7 +11,10 @@ The following developers are involved in this project: Quinn Knowles, David Kauf
 # To Run
 clone the repository 
 enter the repository folder (academic-notification)
+
 enter the subfolder (academic-notification)
+
+npm install
 
 
 
