@@ -16,6 +16,10 @@ enter the subfolder (academic-notification)
 
 npm install
 
+npm run build
+
+serve -s build
+
 
 
 # Licensing
