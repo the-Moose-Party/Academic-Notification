@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from 'react-router-dom';
-import '../css/ElectiveRequirements.css';
+import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 

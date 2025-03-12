@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useStudentData } from '../hooks/useStudentData'; 
-import '../css/DegreeInfo.css';
+import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
 export default function DegreeInfo(){
@@ -35,13 +35,7 @@ export default function DegreeInfo(){
                 <FiSettings className="setting-icon" />
             </div>
 
-            <div className="scrollable-container">
-                {/* Header */}
-                <div className="header">
-                    <FiArrowLeft className="back-button" onClick={() => window.history.back()} />
-                    <h2 className="header-title">Scrollable Box</h2>
-                    <div className="spacer" /> {/* Placeholder for spacing */}
-                </div>
+            <div className="content-justify">
 
                 {/* Scrollable Content */}
                 <div className="scrollable-box">
@@ -53,8 +47,8 @@ export default function DegreeInfo(){
                                 onClick={() => navigate(`/elective-requirements/${studentID}/${group.rqrmnt_group}`, { state: { studentData } })}
                             >
                                 {/* Displaying group label and status */}
-                                <div className="box-title">{group.label}</div>
-                                <div className="box-status">
+                                <div className="adjust-font-to-half-container-size">{group.label}</div>
+                                <div className="adjust-font-to-half-container-size">
                                     {/* Optionally display more information */}
                                     {group.status ? <p dangerouslySetInnerHTML={{ __html: group.status }} /> : <p>Status not available</p>}
                                 </div>

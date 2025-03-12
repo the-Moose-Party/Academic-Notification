@@ -7,5 +7,22 @@ The Academic and Advising Services Center has a need for an application that can
 
 The following developers are involved in this project: Quinn Knowles, David Kaufman, Alexa Guerrero, Jon Malcolm, and Kevin Menenello
 
+
+# To Run
+clone the repository 
+enter the repository folder (academic-notification)
+
+enter the subfolder (academic-notification)
+
+npm install
+
+npm run build
+
+npm install -g serve
+
+serve -s build
+
+
+
 # Licensing
 https://regexlicensing.org/
