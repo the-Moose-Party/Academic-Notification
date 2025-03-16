@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Run Tests
+    name: Run Tests and Lint
     runs-on: ubuntu-latest
 
     strategy:
@@ -33,6 +33,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: Academic-Notification
+
+      - name: Run ESLint
+        run: |
+          echo "Running ESLint..."
+          npm run lint
         working-directory: Academic-Notification
 
       - name: Build (if applicable)
