@@ -28,7 +28,7 @@ export default function DegreeInfo(){
                 <FiSettings className="setting-icon" />
             </div>
 
-            <div className="scrollable-container">
+            <div className="content-justify">
 
                 {/* Scrollable Content */}
                 <div className="scrollable-box">
@@ -40,8 +40,8 @@ export default function DegreeInfo(){
                                 onClick={() => navigate(`/elective-requirements/${studentID}/${group.rqrmnt_group}`, { state: { studentData } })}
                             >
                                 {/* Displaying group label and status */}
-                                <div className="box-title">{group.label}</div>
-                                <div className="box-status">
+                                <div className="adjust-font-to-half-container-size">{group.label}</div>
+                                <div className="adjust-font-to-half-container-size">
                                     {/* Optionally display more information */}
                                     {group.status ? <p dangerouslySetInnerHTML={{ __html: group.status }} /> : <p>Status not available</p>}
                                 </div>
