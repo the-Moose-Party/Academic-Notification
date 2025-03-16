@@ -1,21 +1,27 @@
-name: main
+name: Lint Check
+
 on:
   push:
+    branches: [ "main", "Developer" ]
 
 jobs:
-  ubuntu-test:
-    name: Ubuntu Tests
-    runs-on: Ubuntu-latest
+  lint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Install ESLint
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
         run: npm install
-        
-      - name: initialize ESLint
-        run: npm init @eslint/config@latest
-    
-  # https://dev.to/thomaslombart/how-to-setup-eslint-and-prettier-for-your-react-apps-1n42
+        working-directory: Academic-Notification
 
-  # Need: linter, limit size (5 megs max), use Checkout to allow for the checks, use at least two platforms 
-  # (runners) to run checks, determine triggers
-
-  # npm install eslint
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: Academic-Notification

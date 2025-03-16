@@ -1,28 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import umaine from '../img/umaine.png';
 import '../styles.css';
-import { FiArrowLeft, FiSettings } from 'react-icons/fi';
+import { FiSettings } from 'react-icons/fi';
 
 export default function Selection() {
   const [search, setSearch] = useState('');
   const [data, setData] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(-1); // Tracks highlighted <li>
   const navigate = useNavigate();
+  const listRefs = useRef([]); // Store refs for list items
 
   useEffect(() => {
     const fetchStudentData = async () => {
       try {
         const studentFiles = [
-          '1125662',
-          '0000000',
-          '1122334',
-          '1634455',
-          '1182072',
-          '1011854',
-          '9876543',
-          '1011856',
+          '1125662', '0000000', '1122334', '1634455',
+          '1182072', '1011854', '9876543', '1011856',
         ];
-
         const students = [];
         for (let file of studentFiles) {
           const response = await fetch(`/students/${file}.json`);
@@ -38,30 +33,47 @@ export default function Selection() {
         console.error('Error fetching student data:', error);
       }
     };
-
     fetchStudentData();
   }, []);
 
-  // Filter data based on search input
-  const filteredData = search
-    ? data.filter((item) => item.id.includes(search))
-    : [];
 
-  // Handle selecting a student and navigating with the student data
+  const filteredData = search ? data.filter((item) => item.id.includes(search)) : [];
+
   const handleSelectStudent = (studentID) => {
-    const student = data.find((item) => item.id === studentID); // Find the student data
+    const student = data.find((item) => item.id === studentID);
     if (student) {
       console.log('Navigating to progress with student ID:', studentID);
       navigate(`/degree-progress/${studentID}`);
     }
   };
 
-  // Handle "Enter" key press to select the first filtered student
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && filteredData.length > 0) {
-      handleSelectStudent(filteredData[0].id);
+    if (e.key === 'Enter') {
+      if (selectedIndex !== -1) {
+        handleSelectStudent(filteredData[selectedIndex].id);
+      } else if (filteredData.length > 0) {
+        handleSelectStudent(filteredData[0].id);
+      }
+    }
+
+    if (e.key === 'Tab' && filteredData.length > 0) {
+      e.preventDefault(); 
+
+      if (e.shiftKey) {
+        setSelectedIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : filteredData.length - 1));
+      } else {
+
+        setSelectedIndex((prevIndex) => (prevIndex < filteredData.length - 1 ? prevIndex + 1 : 0));
+      }
     }
   };
+
+
+  useEffect(() => {
+    if (selectedIndex !== -1 && listRefs.current[selectedIndex]) {
+      listRefs.current[selectedIndex].focus();
+    }
+  }, [selectedIndex]);
 
   return (
     <div className="selections">
@@ -70,7 +82,6 @@ export default function Selection() {
         <h2 className="header-title">Student ID Selection</h2>
         <FiSettings className="setting-icon" />
       </div>
-
 
       <div className="content-justify">
         <div className="logo-container">
@@ -94,8 +105,10 @@ export default function Selection() {
               {filteredData.map((item, index) => (
                 <li
                   key={index}
-                  className="dropdown-item"
+                  className={`dropdown-item ${selectedIndex === index ? 'active' : ''}`}
                   onClick={() => handleSelectStudent(item.id)}
+                  ref={(el) => (listRefs.current[index] = el)}
+                  tabIndex={-1} 
                 >
                   {item.id}
                 </li>
