@@ -1,4 +1,4 @@
-import React,  { useState } from 'react';
+import React from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 import { useStudentData } from '../hooks/useStudentData'; 
@@ -8,7 +8,8 @@ import user from '../img/user.png';
 export default function DegreeProgress() {
     const { studentID } = useParams();
     const navigate = useNavigate();
-    const { studentData, loading, error } = useStudentData(studentID);
+    //const { studentData, loading, error } = useStudentData(studentID);
+    const { studentData } = useStudentData(studentID);
     const studentNames = ["Bob Ross", "Joe Demagio", "Cameron Diaz"];
     const graduationDates = [ 1, 2, 3, 4];
     

@@ -4,18 +4,11 @@ import { useStudentData } from '../hooks/useStudentData';
 import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 
+
 export default function DegreeInfo(){
     const { studentID } = useParams();
     const { studentData, loading, error } = useStudentData(studentID);
     const navigate = useNavigate();
-
-    // Placeholder requirements, you can later replace them with real requirements from the JSON
-    const PlaceholderReqs = [
-        { name: 'General Education Requirements' },
-        { name: 'COS 300+ Electives' },
-        { name: 'Western Culture' },
-        { name: 'COS Required Courses'}
-    ];
 
     // Loading and error handling
     if (loading) {
