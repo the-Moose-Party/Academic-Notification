@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
 import { useStudentData } from '../hooks/useStudentData'; 
@@ -9,8 +9,17 @@ export default function DegreeProgress() {
     const { studentID } = useParams();
     const navigate = useNavigate();
     const { studentData, loading, error } = useStudentData(studentID);
-
-
+    const studentNames = ["Bob Ross", "Joe Demagio", "Cameron Diaz"];
+    const graduationDates = [ 1, 2, 3, 4];
+    
+    function RandomSelect(list) {
+        const item = list[Math.floor(Math.random() * list.length)]
+        return(item)
+        }
+    
+    
+    
+    
     return (
         <div className="degree-progress">
             {/* Header */}
@@ -25,10 +34,10 @@ export default function DegreeProgress() {
                     <img src={user} alt="user-avatar" width = "300px" height = "300px" />
                 </div>
                 <div className="student-details">
-                    <h3><strong>Student Name:</strong> John Doe</h3>
+                    <h3><strong>Student Name:</strong> {RandomSelect(studentNames)}</h3>
                     <h3><strong>Student ID:</strong> {studentID}</h3>
                     <h3><strong>Status:</strong> Undergraduate</h3>
-                    <h3><strong>Expected Graduation Date:</strong> XX/20XX</h3>
+                    <h3><strong>Expected Graduation Date:</strong> spring {RandomSelect(graduationDates)}</h3>
                 </div>
             </div>
 
