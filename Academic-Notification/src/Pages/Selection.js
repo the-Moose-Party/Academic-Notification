@@ -36,10 +36,9 @@ export default function Selection() {
     fetchStudentData();
   }, []);
 
-  // Filter the data based on search input
+
   const filteredData = search ? data.filter((item) => item.id.includes(search)) : [];
 
-  // Handle selecting a student
   const handleSelectStudent = (studentID) => {
     const student = data.find((item) => item.id === studentID);
     if (student) {
@@ -48,7 +47,6 @@ export default function Selection() {
     }
   };
 
-  // Handle key press events
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       if (selectedIndex !== -1) {
@@ -59,19 +57,18 @@ export default function Selection() {
     }
 
     if (e.key === 'Tab' && filteredData.length > 0) {
-      e.preventDefault(); // Prevent default tabbing behavior
+      e.preventDefault(); 
 
       if (e.shiftKey) {
-        // Shift + Tab -> Move up in the list
         setSelectedIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : filteredData.length - 1));
       } else {
-        // Tab -> Move down in the list
+
         setSelectedIndex((prevIndex) => (prevIndex < filteredData.length - 1 ? prevIndex + 1 : 0));
       }
     }
   };
 
-  // Effect to focus on the selected item in dropdown
+
   useEffect(() => {
     if (selectedIndex !== -1 && listRefs.current[selectedIndex]) {
       listRefs.current[selectedIndex].focus();
@@ -100,6 +97,7 @@ export default function Selection() {
             placeholder="Enter Student ID"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
 
           {filteredData.length > 0 && (
@@ -110,7 +108,7 @@ export default function Selection() {
                   className={`dropdown-item ${selectedIndex === index ? 'active' : ''}`}
                   onClick={() => handleSelectStudent(item.id)}
                   ref={(el) => (listRefs.current[index] = el)}
-                  tabIndex={-1} // Allow JavaScript-based focus
+                  tabIndex={-1} 
                 >
                   {item.id}
                 </li>
