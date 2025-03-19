@@ -3,8 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useStudentData } from '../hooks/useStudentData';
 import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
-import { PieChart, Pie, Cell } from 'recharts';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { PieChart } from '@mui/x-charts/PieChart';
 
 export default function DegreeInfo() {
   const { studentID } = useParams();
@@ -43,12 +42,12 @@ export default function DegreeInfo() {
     if (!satisfied || !unsatisfied) return 0; // Prevent errors if lists are undefined
     const total = satisfied.length + unsatisfied.length;
     if (total === 0) return 0; // Prevent division by zero
-    return (satisfied.length / total)*100;
+    return (satisfied.length / total) * 100;
   }
 
   const COLORS = ['#0088FE', '#FF8042'];
 
-  const { satisfiedGroups, unsatisfiedGroups } = RequirementLists({jsonData: studentData}); // Get lists
+  const { satisfiedGroups, unsatisfiedGroups } = RequirementLists({ jsonData: studentData }); // Get lists
   const percent = PercentageSatisfied(satisfiedGroups, unsatisfiedGroups);
 
   return (
@@ -80,19 +79,24 @@ export default function DegreeInfo() {
         </div>
       </div>
 
-{/* Progress Section */}
-            <div className="requirement-progress">
-            <BarChart width={300} height={300} data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="value" fill="#8884d8" />
-            </BarChart>
-            <ul className="percent-progress">
-          <li>{(percent ).toFixed(0)}% Complete</li>
-          <li>{((100 - (percent)) ).toFixed(0)}% Remaining</li>
+      {/* Progress Section */}
+      <div className="requirement-progress">
+        <PieChart
+          series={[
+            {
+              data: [
+                { id: 0, value: 10, label: 'series A' },
+                { id: 1, value: 15, label: 'series B' },
+                { id: 2, value: 20, label: 'series C' },
+              ],
+            },
+          ]}
+          width={400}
+          height={200}
+        />
+        <ul className="percent-progress">
+          <li>{(percent).toFixed(0)}% Complete</li>
+          <li>{((100 - (percent))).toFixed(0)}% Remaining</li>
         </ul>
       </div>
     </div>
