@@ -39,7 +39,7 @@
     "Acad Plan": "ANV-BS",
     "Title": "Animal & Vet Science",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ANV-MIN",
@@ -87,7 +87,7 @@
     "Acad Plan": "BCH-BS",
     "Title": "Biochemistry",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "BCH-MIN",
@@ -141,13 +141,13 @@
     "Acad Plan": "BIO-BA",
     "Title": "Biology",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "BIO-BS",
     "Title": "Biology",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "BIO-MIN",
@@ -177,13 +177,13 @@
     "Acad Plan": "BOT-BA",
     "Title": "Botany",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "BOT-BS",
     "Title": "Botany",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "BOT-MIN",
@@ -381,7 +381,7 @@
     "Acad Plan": "CSD-BA",
     "Title": "Communication Sci & Disorders",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "CSD-MIN",
@@ -429,13 +429,13 @@
     "Acad Plan": "ECO-BA",
     "Title": "Economics",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ECO-BS",
     "Title": "Economics-BS",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ECO-MIN",
@@ -471,7 +471,7 @@
     "Acad Plan": "EES-BS",
     "Title": "Ecol & Environmental Sci",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "EES-MIN",
@@ -525,7 +525,7 @@
     "Acad Plan": "ENH-BS",
     "Title": "Environmental Horticulture",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ENH-MIN",
@@ -573,13 +573,13 @@
     "Acad Plan": "ERS-BA",
     "Title": "Earth and Climate Sciences",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ERS-BS",
     "Title": "Earth and Climate Sciences",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ERS-MIN",
@@ -621,13 +621,13 @@
     "Acad Plan": "FIE-BA",
     "Title": "Financial Economics-BA",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "FIE-BS",
     "Title": "Financial Economics",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "FIH-MIN",
@@ -679,7 +679,7 @@
   },
   {
     "Acad Plan": "FRM-MIN",
-    "Title": "Parks@ Recreation@ and Tourism",
+    "Title": "Parks, Recreation, and Tourism",
     "Degree": "minor",
     "College": ""
   },
@@ -687,13 +687,13 @@
     "Acad Plan": "FSN-BS",
     "Title": "Food Science & Human Nutrition",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "FTY-BS",
     "Title": "Forestry",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "GDD-MIN",
@@ -885,7 +885,7 @@
     "Acad Plan": "MAS-BS",
     "Title": "Marine Science",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "MAT-BA",
@@ -909,7 +909,7 @@
     "Acad Plan": "MCB-BS",
     "Title": "Microbiology",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "MCB-MIN",
@@ -987,7 +987,7 @@
     "Acad Plan": "MLB-BS",
     "Title": "Molecular Biomedical Sciences",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "MLB-MIN",
@@ -999,7 +999,7 @@
     "Acad Plan": "MLS-BS",
     "Title": "Medical Laboratory Sciences",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "MRB-MIN",
@@ -1077,7 +1077,7 @@
     "Acad Plan": "NUR-BS",
     "Title": "Nursing",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "NVL-MIN",
@@ -1219,9 +1219,9 @@
   },
   {
     "Acad Plan": "PRT-BS",
-    "Title": "Parks@ Recreation & Tourism",
+    "Title": "Parks, Recreation & Tourism",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "PSY-BA",
@@ -1311,7 +1311,7 @@
     "Acad Plan": "SAG-BS",
     "Title": "Sustainable Agriculture",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "SAG-MIN",
@@ -1347,7 +1347,7 @@
     "Acad Plan": "SFS-BS",
     "Title": "Sustainable Food Systems",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "SFS-MIN",
@@ -1359,7 +1359,7 @@
     "Acad Plan": "SML-BS",
     "Title": "Sustainable Materials & Tech",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "SOC-BA",
@@ -1449,7 +1449,7 @@
     "Acad Plan": "SWK-BS",
     "Title": "Social Work",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "THE-BA",
@@ -1465,7 +1465,7 @@
   },
   {
     "Acad Plan": "THOR-MIN",
-    "Title": "Tourism@ Hosp & Outdoor Rec",
+    "Title": "Tourism, Hosp & Outdoor Rec",
     "Degree": "minor",
     "College": ""
   },
@@ -1503,17 +1503,17 @@
     "Acad Plan": "UND-NSFA",
     "Title": "Undeclared (NSFA)",
     "Degree": "",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "WGS-BA",
-    "Title": "Women's@ Gender@ Sexuality Std",
+    "Title": "Women's, Gender, Sexuality Std",
     "Degree": "BA",
     "College": "Liberal Arts & Sciences"
   },
   {
     "Acad Plan": "WGS-MIN",
-    "Title": "Women's@ Gender@ Sexuality Std",
+    "Title": "Women's, Gender, Sexuality Std",
     "Degree": "minor",
     "College": ""
   },
@@ -1521,7 +1521,7 @@
     "Acad Plan": "WLE-BS",
     "Title": "Wildlife Ecology",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "WTH-MIN",
@@ -1533,13 +1533,13 @@
     "Acad Plan": "ZOL-BA",
     "Title": "Zoology",
     "Degree": "BA",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ZOL-BS",
     "Title": "Zoology",
     "Degree": "BS",
-    "College": "Earth@ Life & Health Sciences"
+    "College": "Earth, Life & Health Sciences"
   },
   {
     "Acad Plan": "ZOL-MIN",
