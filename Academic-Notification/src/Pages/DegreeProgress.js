@@ -9,12 +9,18 @@ export default function DegreeProgress() {
   const { studentID } = useParams();
   const navigate = useNavigate();
   const { studentData } = useStudentData(studentID);
-  const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz'];
+  const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', ''];
   const graduationDates = [2024, 2025, 2026, 2027]; 
+  const programs = getStudentPrograms(studentID)
 
   function RandomSelect(list) {
     const item = list[Math.floor(Math.random() * list.length)];
     return item;
+  }
+
+  function getStudentPrograms(studentID)
+  {
+          
   }
 
   function IdentifyType({ jsonData }) {
