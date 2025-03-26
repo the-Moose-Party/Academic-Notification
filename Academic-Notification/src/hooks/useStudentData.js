@@ -8,7 +8,7 @@ export function useStudentData(studentID) {
     useEffect(() => {
         const fetchStudentData = async () => {
             try {
-                const response = await fetch(`/students/${studentID}.json`);
+                const response = await fetch(`http://theinfinity.rocks:8227/getStudentReport?generateNewIfNotFound=true&studentID=${studentID}`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch student data for ID: ${studentID}`);
                 }
