@@ -40,20 +40,17 @@ export default function Selection() {
   const filteredData = search ? data.filter((item) => item.id.includes(search)) : [];
 
   const handleSelectStudent = (studentID) => {
-    const student = data.find((item) => item.id === studentID);
-    if (student) {
+    
       console.log('Navigating to progress with student ID:', studentID);
       navigate(`/degree-progress/${studentID}`);
-    }
+    
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      if (selectedIndex !== -1) {
-        handleSelectStudent(filteredData[selectedIndex].id);
-      } else if (filteredData.length > 0) {
-        handleSelectStudent(filteredData[0].id);
-      }
+      console.log("Hello there")
+      handleSelectStudent(search);
+    
     }
 
     if (e.key === 'Tab' && filteredData.length > 0) {
@@ -100,21 +97,6 @@ export default function Selection() {
             onKeyDown={handleKeyDown}
           />
 
-          {filteredData.length > 0 && (
-            <ul className="dropdown">
-              {filteredData.map((item, index) => (
-                <li
-                  key={index}
-                  className={`dropdown-item ${selectedIndex === index ? 'active' : ''}`}
-                  onClick={() => handleSelectStudent(item.id)}
-                  ref={(el) => (listRefs.current[index] = el)}
-                  tabIndex={-1} 
-                >
-                  {item.id}
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </div>
     </div>
