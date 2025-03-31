@@ -13,14 +13,14 @@ export default function DegreeProgress() {
   const graduationDates = [2024, 2025, 2026, 2027]; 
   const programs = getStudentPrograms(studentID)
 
-  function RandomSelect(list) {
+  function PseudoRandomSelect(list) {
     const item = list[studentID%list.length];
     return item;
   }
 
   function getStudentPrograms(studentID)
   {
-          
+    
   }
 
   function IdentifyType({ jsonData }) {
@@ -57,7 +57,7 @@ export default function DegreeProgress() {
         </div>
         <div className="student-details">
           <h3>
-            <strong>Student Name:</strong> {RandomSelect(studentNames)}
+            <strong>Student Name:</strong> {PseudoRandomSelect(studentNames)}
           </h3>
           <h3>
             <strong>Student ID:</strong> {studentID}
@@ -66,7 +66,7 @@ export default function DegreeProgress() {
             <strong>Status:</strong> {studentData && <IdentifyType jsonData={studentData} />}
           </h3>
           <h3>
-            <strong>Expected Graduation Date:</strong> Spring {RandomSelect(graduationDates)}
+            <strong>Expected Graduation Date:</strong> Spring {PseudoRandomSelect(graduationDates)}
           </h3>
         </div>
       </div>
