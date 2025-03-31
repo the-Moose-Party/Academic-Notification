@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useStudentData } from '../hooks/useStudentData';
 import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
@@ -12,6 +12,8 @@ export default function DegreeInfo() {
   const { studentID } = useParams();
   const { studentData, loading, error } = useStudentData(studentID);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const program = searchParams.get('program');
 
   if (loading) {
     return <div>Loading student data...</div>;
@@ -24,6 +26,8 @@ export default function DegreeInfo() {
   const totalRequirements = studentData.requirements;
   const satisfiedRequirements = studentData.satisfied;
   const remainingRequirements = totalRequirements - satisfiedRequirements;
+  console.log(program)
+  console.log(studentID)
 
   const data = [
     { name: 'Satisfied', value: satisfiedRequirements },

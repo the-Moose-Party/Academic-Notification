@@ -20,7 +20,7 @@ export default function DegreeProgress() {
 
   function getStudentPrograms(studentID)
   {
-    
+
   }
 
   function IdentifyType({ jsonData }) {
@@ -73,11 +73,11 @@ export default function DegreeProgress() {
 
       <div className="degree-details">
         <h3>Majors & Minors</h3>
-        <div className="major">
+        <div className="major"> 
           <span>Major: Electrical Engineering</span>
           <button
             className="credit-report"
-            onClick={() => navigate(`/degree-information/${studentID}`, { state: { studentData } })}
+            onClick={() => navigate(`/degree-information/${studentID}?program=FIE-BA`, { state: { studentData } })}
           >
             Credit Report
           </button>
