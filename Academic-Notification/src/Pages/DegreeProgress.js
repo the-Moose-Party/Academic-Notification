@@ -14,7 +14,7 @@ export default function DegreeProgress() {
   const programs = getStudentPrograms(studentID)
 
   function RandomSelect(list) {
-    const item = list[Math.floor(Math.random() * list.length)];
+    const item = list[studentID%list.length];
     return item;
   }
 
