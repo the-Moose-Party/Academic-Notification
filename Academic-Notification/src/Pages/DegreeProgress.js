@@ -9,10 +9,21 @@ export default function DegreeProgress() {
   const { studentID } = useParams();
   const navigate = useNavigate();
   const { studentData } = useStudentData(studentID);
-  const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', ''];
+  const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', 'Ilsa Issac'];
   const graduationDates = [2024, 2025, 2026, 2027]; 
-  const rawProgramsResponse = useStudentPrograms(studentID)
+  const { studentProgramData, loading, error } = useStudentPrograms(studentID);
   
+  console.log(useStudentPrograms(studentID));
+
+  if (loading) {
+    console.log("loading 17");
+    return <div>Loading student data...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   function PseudoRandomSelect(list) {
     const item = list[studentID%list.length];
     return item;
@@ -68,7 +79,7 @@ export default function DegreeProgress() {
 
       <div className="degree-details">
         <h3>Majors & Minors</h3>
-        {rawProgramsResponse.studentData.map((program) => (
+        {studentProgramData.map((program) => (
           <div className="major"> 
           <span>{program.programName}</span>
           <button
