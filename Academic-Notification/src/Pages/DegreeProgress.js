@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
-import { useStudentData } from '../hooks/useStudentData';
+import { useStudentData, useStudentPrograms } from '../hooks/useStudentData';
 import '../styles.css';
 import user from '../img/user.png';
 
@@ -11,17 +11,13 @@ export default function DegreeProgress() {
   const { studentData } = useStudentData(studentID);
   const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', ''];
   const graduationDates = [2024, 2025, 2026, 2027]; 
-  const programs = getStudentPrograms(studentID)
+  const rawProgramsResponse = useStudentPrograms(studentID)
 
   function PseudoRandomSelect(list) {
     const item = list[studentID%list.length];
     return item;
   }
 
-  function getStudentPrograms(studentID)
-  {
-
-  }
 
   function IdentifyType({ jsonData }) {
     if (!jsonData || !jsonData.careers || jsonData.careers.length === 0) {
@@ -73,6 +69,7 @@ export default function DegreeProgress() {
 
       <div className="degree-details">
         <h3>Majors & Minors</h3>
+        {console.log(rawProgramsResponse)}
         <div className="major"> 
           <span>Major: Electrical Engineering</span>
           <button
@@ -82,10 +79,7 @@ export default function DegreeProgress() {
             Credit Report
           </button>
         </div>
-        <div className="major">
-          <span>Major: Chemical Engineering</span>
-          <button className="credit-report">Credit Report</button>
-        </div>
+        
       </div>
 
       <button className="summary-report">Generate Credit Summary Report</button>

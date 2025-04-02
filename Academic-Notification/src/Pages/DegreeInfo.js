@@ -10,11 +10,11 @@ import NavBar from "../components/NavBar";
 
 export default function DegreeInfo() {
   const { studentID } = useParams();
-  const { studentData, loading, error } = useStudentData(studentID);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const program = searchParams.get('program');
-
+  const { studentData, loading, error } = useStudentData(studentID,program);
+ 
   if (loading) {
     return <div>Loading student data...</div>;
   }
