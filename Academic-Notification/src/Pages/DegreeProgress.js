@@ -12,12 +12,11 @@ export default function DegreeProgress() {
   const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', ''];
   const graduationDates = [2024, 2025, 2026, 2027]; 
   const rawProgramsResponse = useStudentPrograms(studentID)
-
+  
   function PseudoRandomSelect(list) {
     const item = list[studentID%list.length];
     return item;
   }
-
 
   function IdentifyType({ jsonData }) {
     if (!jsonData || !jsonData.careers || jsonData.careers.length === 0) {
@@ -69,16 +68,17 @@ export default function DegreeProgress() {
 
       <div className="degree-details">
         <h3>Majors & Minors</h3>
-        {console.log(rawProgramsResponse)}
-        <div className="major"> 
-          <span>Major: Electrical Engineering</span>
+        {rawProgramsResponse.studentData.map((program) => (
+          <div className="major"> 
+          <span>{program.programName}</span>
           <button
             className="credit-report"
-            onClick={() => navigate(`/degree-information/${studentID}?program=FIE-BA`, { state: { studentData } })}
+            onClick={() => navigate(`/degree-information/${studentID}?program=${program.programCode}`, { state: { studentData } })}
           >
             Credit Report
           </button>
         </div>
+        ))}
         
       </div>
 
