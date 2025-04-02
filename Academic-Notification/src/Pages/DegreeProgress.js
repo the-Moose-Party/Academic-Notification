@@ -44,15 +44,16 @@ export default function DegreeProgress() {
 
             
             <div className='degree-details'>
+                {/*Map each major/minor from a list/dictionary*/}
                     <h3>Majors & Minors</h3>
                     <div className='major'>
-                        <span>Major: Electrical Engineerig</span>
+                        <span>Major: Electrical Engineering</span>
 
                         <button className="credit-report" onClick={() => navigate(`/degree-information/${studentID}`, { state: { studentData } })}>Credit Report</button>
 
                     </div>
                     <div className='major'>
-                        <span>Major: Chemical Engineerig</span>
+                        <span>Major: Chemical Engineering</span>
                         <button className="credit-report">Credit Report</button>
                     </div>
             </div>
