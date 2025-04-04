@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useStudentData } from '../hooks/useStudentData';
 import '../styles.css';
 import { FiArrowLeft, FiSettings } from 'react-icons/fi';
@@ -10,9 +10,11 @@ import NavBar from "../components/NavBar";
 
 export default function DegreeInfo() {
   const { studentID } = useParams();
-  const { studentData, loading, error } = useStudentData(studentID);
   const navigate = useNavigate();
-
+  const [searchParams] = useSearchParams();
+  const program = searchParams.get('program');
+  const { studentData, loading, error } = useStudentData(studentID,program);
+ 
   if (loading) {
     return <div>Loading student data...</div>;
   }
@@ -21,16 +23,19 @@ export default function DegreeInfo() {
     return <div>Error: {error}</div>;
   }
 
-  const totalRequirements = studentData.requirements;
-  const satisfiedRequirements = studentData.satisfied;
+  const totalRequirements = studentData.req_count;
+  const satisfiedRequirements = studentData.req_satisfied;
   const remainingRequirements = totalRequirements - satisfiedRequirements;
+  console.log(program)
+  console.log(studentID)
 
   const data = [
     { name: 'Satisfied', value: satisfiedRequirements },
     { name: 'Remaining', value: remainingRequirements },
   ];
 
-  function RequirementLists({ jsonData }) {
+  function RequirementLists({ jsonData }) { 
+    //console.log(jsonData)
     if (!jsonData || !jsonData.groups) {
       return { satisfiedGroups: [], unsatisfiedGroups: [] }; // Return empty arrays if no data
     }
@@ -100,10 +105,10 @@ export default function DegreeInfo() {
               {requirement.descr || group.label}
             </div>
             <div className="adjust-font-to-half-container-size">
-              {requirement.status ? (
+              {requirement.rl_status ? (
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: requirement.status,
+                    __html: requirement.rl_status + "\n" + requirement.rl_descr,
                   }}
                 />
               ) : (
