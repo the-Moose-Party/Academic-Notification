@@ -121,6 +121,10 @@
   }
   
   
+.NavbarHolder{ 
+    display: flex;
+
+}
   .main-content {
     margin: 0px;
     padding: 0px;
@@ -133,10 +137,18 @@
     padding: 5px;
 }
 
+span{
+ font: 1.5em
+}
+
+li {
+ padding: 15px 0;
+}
+
 .navbar ul {
     list-style: none;
     padding: 0;
-    font: 1.5em;
+    font-size: 1.5em;
 }
 
 .navbar a {

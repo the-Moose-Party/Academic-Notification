@@ -64,8 +64,8 @@ export default function DegreeInfo() {
 
   return (
     <div className="degree-progress-info full-page-layout">
-      <NavBar />  {/* Sidebar navigation */}
-      
+
+
       <div className="main-content">
         {/* Header */}
         <div className="header">
@@ -73,80 +73,86 @@ export default function DegreeInfo() {
           <h2 className="header-title">Degree Information {studentID}</h2>
           <FiSettings className="setting-icon" />
         </div>
-  
-        <div className="content-justify">
-  {/* Scrollable Content */}
-  <div className="scrollable-box">
-    <div className="box-grid">
-      {studentData.groups.flatMap((group) =>
-        group.requirements.map((requirement, index) => (
-          <button
-            key={`${group.rqrmnt_group}-${index}`}
-            className="boxbutton"
-            onClick={() =>
-              navigate(
-                `/elective-requirements/${studentID}/${group.rqrmnt_group}`,
+        <div className="NavbarHolder">
+          <NavBar />  {/* Sidebar navigation */}
+
+          <div className="content-justify">
+            {/* Scrollable Content */}
+            <div className="scrollable-box">
+              <div className="box-grid">
+                {studentData.groups.flatMap((group) =>
+                  group.requirements.map((requirement, index) => (
+                    <button
+                      key={`${group.rqrmnt_group}-${index}`}
+                      className="boxbutton"
+                      onClick={() =>
+                        navigate(
+                          `/elective-requirements/${studentID}/${group.rqrmnt_group}`,
+                          {
+                            state: {
+                              studentData,
+                              group,
+                              requirement,
+                            },
+                          }
+                        )
+                      }
+                    >
+                      <div className="adjust-font-to-half-container-size">
+                        {requirement.descr || group.label}
+                      </div>
+                      <div className="adjust-font-to-half-container-size">
+                        {requirement.status ? (
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: requirement.status,
+                            }}
+                          />
+                        ) : (
+                          <p>Status not available</p>
+                        )}
+                      </div>
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+            
+            <div className="requirement-progress">
+            <ChartContainer
+              width={500}
+              height={300}
+              series={[{ data: uData, label: 'uv', type: 'bar' }]}
+              xAxis={[{ scaleType: 'band', data: xLabels }]}
+            >
+              <BarPlot />
+            </ChartContainer>
+
+            <PieChart
+              series={[
                 {
-                  state: {
-                    studentData,
-                    group,
-                    requirement,
-                  },
-                }
-              )
-            }
-          >
-            <div className="adjust-font-to-half-container-size">
-              {requirement.descr || group.label}
-            </div>
-            <div className="adjust-font-to-half-container-size">
-              {requirement.status ? (
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: requirement.status,
-                  }}
-                />
-              ) : (
-                <p>Status not available</p>
-              )}
-            </div>
-          </button>
-        ))
-      )}
-    </div>
-  </div>
-</div>
+                  data: [
+                    { id: 0, value: percent, label: 'Completed' },
+                    { id: 1, value: (100 - percent), label: 'Remaining' },
+                  ],
+                },
+              ]}
+              width={400}
+              height={200}
+            />
+          </div>
+          </div>
 
 
-  
-  
-        
-        {/* Progress Section */}
-        <div className="requirement-progress">
-          <ChartContainer
-            width={500}
-            height={300}
-            series={[{ data: uData, label: 'uv', type: 'bar' }]}
-            xAxis={[{ scaleType: 'band', data: xLabels }]}
-          >
-            <BarPlot />
-          </ChartContainer>
-  
-          <PieChart
-            series={[
-              {
-                data: [
-                  { id: 0, value: percent, label: 'Completed' },
-                  { id: 1, value: (100 - percent), label: 'Remaining' },
-                ],
-              },
-            ]}
-            width={400}
-            height={200}
-          />
+
+
+
+
+          {/* Progress Section */}
+
         </div>
       </div>
     </div>
   );
-  
+
 }
