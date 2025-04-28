@@ -11,8 +11,8 @@ function generatePDF(studentData, programArray, name, gradDate){
     const doc = new jsPDF();
 
     const date = new Date();
-    let day = date.getDay();
-    let month = date.getMonth();
+    let day = date.getDate();
+    let month = date.getMonth()+1;
     let year = date.getFullYear();
     const currentDate = `${month}-${day}-${year}`;
 
