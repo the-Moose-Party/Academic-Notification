@@ -5,6 +5,7 @@ import { useStudentData, useStudentPrograms } from '../hooks/useStudentData';
 import '../styles.css';
 import NavBar from '../components/NavBar';
 import user from '../img/user.png';
+import PDFGen from '../components/PDFGen';
 
 export default function DegreeProgress() {
   const { studentID } = useParams();
@@ -105,6 +106,10 @@ export default function DegreeProgress() {
           <button className="summary-report">Generate Credit Summary Report</button>
         </div>
       </div>
+
+      <button className="summary-report">Generate Credit Summary Report</button>
+      <PDFGen></PDFGen>
+
     </div>
   );
 }
