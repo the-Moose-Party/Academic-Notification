@@ -13,12 +13,13 @@ export default function DegreeProgress() {
   const { studentData } = useStudentData(studentID);
   const studentNames = ['Bob Ross', 'Joe Demagio', 'Cameron Diaz', 'John Johnson', 'Jake Jacobs', 'Ron Rocky', 'Adam Adams', 'Samantha Smith', 'Peter Parker', 'Ilsa Issac'];
   const graduationDates = [2024, 2025, 2026, 2027];
+  const graduationTerms = ['Fall', 'Spring','Summer','Winter']
   const { studentProgramData, loading, error } = useStudentPrograms(studentID);
 
   //Moved into variable to allow passing to PDF function
   let name = PseudoRandomSelect(studentNames);
   let gradDate = PseudoRandomSelect(graduationDates);
-
+  let gradTerm = PseudoRandomSelect(graduationTerms);
 
 
   console.log(useStudentPrograms(studentID));
@@ -88,7 +89,7 @@ export default function DegreeProgress() {
                 <strong>Status:</strong> {studentData && <IdentifyType jsonData={studentData} />}
               </h3>
               <h3>
-                <strong>Expected Graduation Date:</strong> Spring {gradDate}
+                <strong>Expected Graduation Date:</strong> {gradTerm} {gradDate}
               </h3>
             </div>
           </div>
@@ -109,7 +110,7 @@ export default function DegreeProgress() {
 
           </div>
 
-          <PDFGen id={studentID} data={studentData} programs={studentProgramData} name={name} graduation={gradDate}></PDFGen>
+          <PDFGen id={studentID} data={studentData} programs={studentProgramData} name={name} graduation={gradTerm + " " + gradDate}></PDFGen>
         </div>
       </div>
     </div>

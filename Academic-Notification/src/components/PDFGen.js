@@ -9,6 +9,7 @@ import { useStudentData, useStudentPrograms } from '../hooks/useStudentData';
 //Does NOT currently support multiple pages
 function generatePDF(studentData, programArray, name, gradDate){
     const doc = new jsPDF();
+    console.log('name is ' + name)
 
     const date = new Date();
     let day = date.getDate();
