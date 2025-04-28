@@ -310,28 +310,39 @@ li {
     color: #ffffff;
     border: 2px solid #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: top;
-    font-size: 2.5em;
+    font-size: clamp(1rem, 2vw, 2.5em); /* <-- dynamic font size */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* prevent spill */
+    padding: 10px;
+    text-align: center;
+    word-break: break-word; /* Allow long words to break */
 }
 
 .requirement-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 25px 0;
     height: 100%;
-  }
+    overflow: hidden; /* containment */
+}
   
-  .requirement-descr {
-    font-weight: 500;  /* Makes the description bold */
-    font-size: 2.2rem;  /* Adjust as needed */
-  }
+.requirement-descr {
+    font-weight: 500;
+    font-size: clamp(1rem, 1.5vw, 2rem); 
+    overflow-wrap: break-word; /* Handle long words */
+    text-align: center;
+    margin-bottom: 10px;
+}
   
-  .requirement-status {
-    font-weight: normal;  /* Makes the status text normal */
-    font-size: 0.875rem;  /* Adjust as needed */
-    margin-top: auto;  /* Pushes it to the bottom */
-  }
+.requirement-status {
+    font-weight: normal;
+    font-size: clamp(0.8rem, 1vw, 1rem); 
+    margin-top: auto;
+    overflow-wrap: break-word;
+    text-align: center;
+}
 
 .requirement-progress { /*graph container*/
     display: flex;
