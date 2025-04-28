@@ -73,6 +73,7 @@ export default function DegreeInfo() {
               <div className="box-grid">
                 {studentData.groups?.flatMap((group) =>
                   group.requirements.map((requirement, index) => (
+                    requirement.rl_satisfied != true ? 
                     <button
                       key={`${group.rqrmnt_group}-${index}`}
                       className={`boxbutton ${getGroupClass(group)}`}
@@ -108,7 +109,7 @@ export default function DegreeInfo() {
                         </div>
                       </div>
                     </button>
-                  ))
+                   : <></>))
                 )}
               </div>
             </div>
