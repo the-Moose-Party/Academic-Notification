@@ -106,7 +106,7 @@
 
 .navbar {
     width: 200px;
-    height: 100vh;
+    height: 100%;
     background: #001f3f;
     border: #00274C;
     border-width: 2px;
@@ -121,6 +121,10 @@
   }
   
   
+.NavbarHolder{ 
+    display: flex;
+
+}
   .main-content {
     margin: 0px;
     padding: 0px;
@@ -133,10 +137,18 @@
     padding: 5px;
 }
 
+span{
+ font: 1.5em
+}
+
+li {
+ padding: 15px 0;
+}
+
 .navbar ul {
     list-style: none;
     padding: 0;
-    font: 1.5em;
+    font-size: 1.5em;
 }
 
 .navbar a {
@@ -298,17 +310,56 @@
     color: #ffffff;
     border: 2px solid #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: top;
-    font-size: 2.5em;
+    font-size: clamp(1rem, 2vw, 2.5em); /* <-- dynamic font size */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* prevent spill */
+    padding: 10px;
+    text-align: center;
+    word-break: break-word; /* Allow long words to break */
 }
 
-
+.requirement-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden; /* containment */
+}
+  
+.requirement-descr {
+    font-weight: 500;
+    font-size: clamp(1rem, 1.5vw, 2rem); 
+    overflow-wrap: break-word; /* Handle long words */
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+.requirement-status {
+    font-weight: normal;
+    font-size: clamp(0.8rem, 1vw, 1rem); 
+    margin-top: auto;
+    overflow-wrap: break-word;
+    text-align: center;
+}
 
 .requirement-progress { /*graph container*/
     display: flex;
 
 }
 
+.general-education-group {
+    background-color: #3D85BB; /* Light blue */
+  }
+  
+  .major-requirements-group {
+    background-color: #00274C; /* dark blue */
+  }
+  
+  .electives-group {
+    background-color: #73BAE8; /* Lightestt blue */
+  }
 /* [END] Degree Info Page ============================================================================================================================== */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -334,3 +385,4 @@
     color: white;
     margin-left: 80%;
 }
+

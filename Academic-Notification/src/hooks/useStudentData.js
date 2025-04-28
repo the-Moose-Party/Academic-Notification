@@ -38,7 +38,7 @@ export function useStudentPrograms(studentID) {
     useEffect(() => {
         const fetchStudentProgramData = async () => {
             try {
-                const response = await fetch(`http://theinfinity.rocks:8227/getStudentProgramRequirementStructure?generateNewIfNotFound=true&studentID=${studentID}  `);
+                const response = await fetch(`http://theinfinity.rocks:8227/getStudentProgramRequirementStructure?generateNewIfNotFound=true&studentID=${studentID}`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch student programs for ID: ${studentID}`);
                 }
@@ -57,4 +57,33 @@ export function useStudentPrograms(studentID) {
     }, [studentID]);
 
     return { studentProgramData, loading, error };
+}
+
+export function useRequirementCourses(reqGroup,reqNum) {
+    const [reqProgramInfo, setReqProgramInfo] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchReqProgramInfo = async () => {
+            try {
+                const response = await fetch(`http://theinfinity.rocks:8227/getCourseFulfillmentOptions?reqGroup=${reqGroup}&requirement=${reqNum}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch programs for req: ${reqGroup} : ${reqNum}`);
+                }
+                const data = await response.json();
+                setReqProgramInfo(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (reqGroup,reqNum) {
+            fetchReqProgramInfo();
+        }
+    }, [reqGroup,reqNum]);
+
+    return { reqProgramInfo, loading, error };
 }
