@@ -23,10 +23,6 @@ export default function DegreeInfo() {
     return <div>Error: {error}</div>;
   }
 
-  const totalRequirements = studentData.req_count;
-  const satisfiedRequirements = studentData.req_satisfied;
-  const remainingRequirements = totalRequirements - satisfiedRequirements;
-
   console.log(program);
   console.log(studentID);
 
@@ -49,11 +45,11 @@ export default function DegreeInfo() {
     // You can expand this function to actually render something
   }
 
-  const satisfiedGroups = (studentData.groups || []).filter(group => group.satisfied);
-  const unsatisfiedGroups = (studentData.groups || []).filter(group => !group.satisfied);
+  const satisfiedReqs = (studentData.groups).map(group => group.requirements.filter(requirement => requirement.satisfied));
+  const unsatisfiedReqs = ((studentData.groups).map(group => group.requirements.filter(requirement => !requirement.satisfied)));
 
-  const total = 120;
-  const percentRemaining = total ? ((unsatisfiedGroups.length * 3) / total) * 100 : 0;
+  const creditsRemaining = ((unsatisfiedReqs[0].length * 3))
+  const creditsTotal = creditsRemaining + (satisfiedReqs[0].length * 3);
 
   const uData = [4000, 3000, 2000];
   const xLabels = ['Required', 'Gen. Electives', 'In Major Electives'];
@@ -137,8 +133,8 @@ export default function DegreeInfo() {
             series={[
               {
                 data: [
-                  { id: 0, value: percentRemaining, label: 'Remaining', color: COLORS[0] },
-                  { id: 1, value: 100 - percentRemaining, label: 'Completed', color: COLORS[1] },
+                  { id: 0, value: creditsTotal-creditsRemaining, label: 'Completed', color: COLORS[1] },
+                  { id: 1, value: creditsRemaining, label: 'Remaining', color: COLORS[0] },
                 ],
               },
             ]}
